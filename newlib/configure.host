@@ -510,6 +510,9 @@ case "${host}" in
 	sys_dir=sysvi386
 	unix_dir=unix
 	;;
+  i[3-7]86-*-sel4*)
+    sys_dir=sel4
+    ;;
   i[34567]86-pc-linux-*)
 	sys_dir=linux
 	unix_dir=unix
