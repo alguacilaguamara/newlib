@@ -57,7 +57,7 @@ void __unlockfile(FILE *) ATTR_LIBC_VISIBILITY;
 void __synccall(void (*)(void *), void *);
 int __setxid(int, int, int, int);
 
-extern char **__environ;
+extern char **environ;
 
 #undef weak_alias
 #define weak_alias(old, new) \
