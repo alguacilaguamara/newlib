@@ -1,9 +1,7 @@
-int kill(int pid, int sig)
-{
-    //es va_list
-  //  sys_tgkill(pid);
+#include <signal.h>
+#include "syscall.h"
 
-    /*o es algo más test_kill_from_parent(struct env *env)?*/
-    
+int kill(pid_t pid, int sig)
+{
 	return syscall(SYS_kill, pid, sig);
-} 
+}

@@ -1,5 +1,6 @@
-//https://www.geeksforgeeks.org/wait-system-call-c/
-int wait(int *status)
+#include <sys/wait.h>
+
+pid_t wait(int *status)
 {
-    static inline int sync_bin_sem_bare_wait(seL4_CPtr notification, volatile int *value)
-} 
+	return waitpid((pid_t)-1, status, 0);
+}

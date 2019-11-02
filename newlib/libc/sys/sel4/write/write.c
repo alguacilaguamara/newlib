@@ -1,8 +1,8 @@
+#include <unistd.h>
+#include "syscall.h"
+#include "libc.h"
 
-
-//https://github.com/seL4/musllibc/blob/b41b6f8ff99a4328a681023b64234938459854fc/src/internal/stdio_impl.h
-int write(int file, char *ptr, int len)
+ssize_t write(int fd, const void *buf, size_t count)
 {
-    
+	return syscall_cp(SYS_write, fd, buf, count);
 }
- 

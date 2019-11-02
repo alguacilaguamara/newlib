@@ -1,2 +1,8 @@
-int read(int file, char *ptr, int len){
-    int libvchan_read(libvchan_t * ctrl, void *data, size_t size)} 
+#include <unistd.h>
+#include "syscall.h"
+#include "libc.h"
+
+ssize_t read(int fd, void *buf, size_t count)
+{
+	return syscall_cp(SYS_read, fd, buf, count);
+}

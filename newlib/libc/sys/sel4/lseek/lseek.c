@@ -1,6 +1,15 @@
-//http://sopa.dis.ulpgc.es/prog_c/FICHER.HTM
-//https://github.com/seL4/musllibc/blob/b41b6f8ff99a4328a681023b64234938459854fc/src/stdio/fseek.c
-int lseek(int file, int ptr, int dir)
+#include <unistd.h>
+#include "syscall.h"
+#include "libc.h"
+
+off_t lseek(int fd, off_t offset, int whence)
 {
-    long sys_lseek(va_list ap);
-} 
+#ifdef SYS__llseek
+	off_t result;
+	return syscall(SYS__llseek, fd, offset>>32, offset, &result, whence) ? -1 : result;
+#else
+	return syscall(SYS_lseek, fd, offset, whence);
+#endif
+}
+
+LFS64(lseek);

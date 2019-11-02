@@ -1,3 +1,6 @@
+#include "libc.h"
+#include "pthread_impl.h"
+
 /* Create a new TCB */
 /* hint: vka_alloc_tcb()
     * int vka_alloc_tcb(vka_t *vka, vka_object_t *result);

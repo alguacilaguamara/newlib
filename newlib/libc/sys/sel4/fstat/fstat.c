@@ -1,3 +1,9 @@
+#include <stat.h>
+#include <errno.h>
+#include <fcntl.h>
+#include "syscall.h"
+#include "libc.h"
+
 //https://github.com/seL4/seL4_libs/blob/master/libsel4vka/include/vka/vka.h#L17
 //https://github.com/seL4/musllibc/blob/b41b6f8ff99a4328a681023b64234938459854fc/src/stat/fstat.c
 int fstat(int file, struct stat *st)
