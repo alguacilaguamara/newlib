@@ -3,7 +3,7 @@
 #include "syscall.h"
 #include "libc.h"
 
-int open(const char *filename, int flags, ...)
+int open(const char *filename, int flags)
 {
 	mode_t mode = 0;
 

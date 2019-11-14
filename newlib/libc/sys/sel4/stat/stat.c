@@ -1,4 +1,4 @@
-#include <sys/stat.h>
+#include <stat.h>
 #include <fcntl.h>
 #include "syscall.h"
 #include "libc.h"

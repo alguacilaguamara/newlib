@@ -19,9 +19,4 @@ int close(int fd)
 }
 
 
-//https://github.com/seL4/seL4_libs/blob/c7e4a85edc3048979fbc962ace2dbe657e8d0b3c/libsel4muslcsys/src/syscalls.h
-  //     int close(int file)
-    //    {
-      //      return 0;
-        //}
-    
+
