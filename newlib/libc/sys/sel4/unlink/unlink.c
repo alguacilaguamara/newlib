@@ -5,8 +5,8 @@
 int unlink(char *name)
 {
     #ifdef SYS_unlink
-        return syscall(SYS_unlink, path);
+        return syscall(SYS_unlink, name);
     #else
-        return syscall(SYS_unlinkat, AT_FDCWD, path, 0);
+        return syscall(SYS_unlinkat, AT_FDCWD, name, 0);
     #endif
 } 

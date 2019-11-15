@@ -1,7 +1,12 @@
-#include <times.h>
+#include <time.h>
 #include "syscall.h"
 
-clock_t times(struct tms *tms)
+int __clock_gettime(clockid_t, struct timespec *);
+
+time_t time(time_t *t)
 {
-    return __syscall(SYS_times, tms);
-} 
+	struct timespec ts;
+	__clock_gettime(CLOCK_REALTIME, &ts);
+	if (t) *t = ts.tv_sec;
+	return ts.tv_sec;
+}
